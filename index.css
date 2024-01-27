@@ -1,0 +1,279 @@
+/* || Roboto Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+/* || Poppins Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+/* || RESET */
+*,
+::before,
+::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+/* || CSS Font Size Variables */
+:root {
+
+    /* | For Display Text  */
+    --display: 4rem;
+    /* 64px */
+    --display-height: 44px;
+
+    /* | For Heading Text  */
+    --heading: 2.813rem;
+    /* 45px */
+    --heading-height: 36px;
+
+    /* | For Title Text  */
+    --title: 1.25rem;
+    /* 20px */
+    --title-height: 24px;
+    --title-spacing: 0.15px;
+
+    /* | For Label Text  */
+    --label: 1.125rem;
+    /* 18px */
+    --label-height: 16px;
+    --label-spacing: 0.5px;
+
+    /* | For body Text  */
+    --body-m: 0.875rem;
+    /* 14px */
+    --body-m-height: 20px;
+    --body-m-spacing: 0.25px;
+
+    /* || All Color variables */
+    --primary: #ffffff;
+    --secondary: #0d0e1b;
+    --color-60: #f0ffff;
+    --color-30: #f5f5dc;
+    --color-10: #ffe4c4;
+}
+
+
+input,
+button,
+textarea {
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* || body  */
+body {
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* || Main Container Styles */
+#root {
+    background-color: var(--primary);
+    width: 100%;
+    height: fit-content;
+    min-height: 100vh;
+    overflow: hidden;
+    overflow-y: scroll;
+    display: grid;
+    grid-template-columns: 100px 1fr 100px;
+    transition: grid-template-columns 0.2s ease-in-out;
+}
+
+
+@media (width < 481px) {
+    #root {
+        grid-template-columns: 25px 1fr 25px;
+    }
+}
+
+
+@media (481px <=width < 768px) {
+    #root {
+        grid-template-columns: 50px 1fr 50px;
+    }
+}
+
+
+.section {
+    grid-column: 2/3;
+    min-width: 0;
+    padding-block: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.source--container {
+    min-width: 0;
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+.header--text {
+    user-select: none;
+    text-align: center;
+    font-size: var(--heading);
+    line-height: var(--heading-height);
+    letter-spacing: var(--heading-spacing);
+    margin-block: 2.5rem;
+    padding-block: 8px;
+    color: #282c34;
+}
+
+
+.text--source--container {
+    background-color: transparent;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.text--source--container .input--text {
+    min-width: 0;
+    width: 100%;
+    max-width: 600px;
+    min-height: 300px;
+    height: 300px;
+    max-height: 600px;
+    resize: vertical;
+    border: none;
+    outline: none;
+    padding: 16px;
+    background-color: var(--color-30);
+    color: var(--secondary);
+    font-size: var(--body-m);
+    letter-spacing: var(--body-m-spacing);
+    line-height: var(--body-m-height);
+    opacity: .8;
+}
+
+
+.input--text::placeholder {
+    opacity: .8;
+    color: var(--secondary);
+    font-size: var(--body-m);
+    letter-spacing: var(--body-m-spacing);
+}
+
+
+#overviewContainer {
+    width: 100%;
+    height: fit-content;
+    margin-block: 8px;
+}
+
+
+.convert--btn--container {
+    user-select: none;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.convert--btn--container .convert--btn {
+    font-size: var(--label);
+    letter-spacing: var(--label-spacing);
+    padding: 8px 16px;
+    border-radius: 999rem;
+    font-weight: 500;
+    border: 2.5px solid var(--color-10);
+    background-color: transparent;
+    transition:
+        background-color 0.2s ease-in-out,
+        color 0.2s ease-in-out;
+}
+
+
+.convert--btn:hover {
+    background-color: var(--color-10);
+}
+
+
+.converted--card {
+    position: relative;
+    min-width: 0;
+    width: 100%;
+    max-width: 600px;
+    min-height: 300px;
+    height: fit-content;
+    padding: 16px;
+    background-color: var(--color-30);
+    color: var(--secondary);
+    display: flex;
+    align-items: center;
+    z-index: 5;
+}
+
+.converted--card .text {
+    font-weight: 500;
+    font-size: var(--body-m);
+    letter-spacing: var(--body-m-spacing);
+    line-height: var(--body-m-height);
+}
+
+
+
+.converted--card div {
+    position: absolute;
+    aspect-ratio: 1/1;
+    width: 100px;
+    height: 100px;
+    z-index: -1;
+}
+
+
+.shape--1 {
+    top: 0;
+    right: 0;
+    background-color: #c300ea75;
+    border-bottom-left-radius: 100px;
+}
+
+
+.shape--2 {
+    left: 0;
+    bottom: 0;
+    background-color: #00ea6575;
+    border-top-right-radius: 100px;
+}
+
+
+.converted--card .shape--3 {
+    width: 200px;
+    height: 200px;
+    top: calc(50% - 100px);
+    right: calc(50% - 100px);
+    bottom: calc(50% - 100px);
+    left: calc(50% - 100px);
+    background-color: #b7ea0075;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+}
